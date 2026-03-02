@@ -117,7 +117,7 @@ public class interview_questions {
 
 
 
-    // https://leetcode.com/problems/reverse-linked-list/submissions/
+    // https://leetcode.com/problems/reverse-linked-list/description/
     // google, apple, amazon, microsoft
     public ListNode reverseList(ListNode head) {
         if (head == null) {
@@ -145,8 +145,8 @@ public class interview_questions {
         }
 
         // skip the first left-1 nodes
-        ListNode current = head;
-        ListNode prev = null;
+        ListNode current = head; //1
+        ListNode prev = null; //0
         for (int i = 0; current != null && i < left - 1; i++) {
             prev = current;
             current = current.next;
@@ -155,7 +155,7 @@ public class interview_questions {
         ListNode last = prev;
         ListNode newEnd = current;
 
-        // reverse between left and right
+        //reverse between left and right
         ListNode next = current.next;
         for (int i = 0; current != null && i < right - left + 1; i++) {
             current.next = prev;
@@ -272,6 +272,9 @@ public class interview_questions {
     // linkedin, google, facebook, microsoft, amazon, apple
 //    https://leetcode.com/problems/palindrome-linked-list/
     public boolean isPalindrome(ListNode head) {
+        // find  the mid
+        // rev half half -m
+        // check one by one
         ListNode mid = middleNode(head);
         ListNode headSecond = reverseList(mid);
         ListNode rereverseHead = headSecond;
@@ -289,8 +292,7 @@ public class interview_questions {
         return head == null || headSecond == null;
     }
 
-    // https://leetcode.com/problems/reorder-list/
-// Google, Facebook
+    //https://leetcode.com/problems/reorder-list/
     public void reorderList(ListNode head) {
         if (head == null || head.next == null) {
             return;
