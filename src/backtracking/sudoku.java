@@ -50,7 +50,7 @@ public class sudoku {
                 // soduko is solved
             }
 
-            // backtrack
+            // backtrack 0-9 all possibilities
             for (int number = 1; number <= 9; number++) {
                 if (isSafe(board, row, col, number)) {
                     board[row][col] = number;
